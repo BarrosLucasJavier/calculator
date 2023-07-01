@@ -1,0 +1,123 @@
+@use './variables.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    min-height: 100vh;
+    background-color: var(--main);
+}
+.calc{
+    padding: 1.3rem;
+    max-width: 550px;
+    min-width: 375px;
+}
+/*----- Title Section -----*/
+.calc-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 1.5rem;
+    color: var(--text-ligth);
+    p{
+        flex-grow: 1;
+        text-align: right;
+        padding: 0 1.5rem;
+        font-size: 0.8rem;
+    }
+}
+.theme-opt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem;
+    font-size: 0.8rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.toggle-container{
+    width: 4rem;
+    background-color: var(--keypad);
+    height: 1.3rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0.3rem;
+    justify-content: start;
+
+    button{
+        width: 0.8rem;
+        height: 0.8rem;
+        border: none;
+        border-radius: 50%;
+        background-color: var(--key-toggle);
+    }
+}
+
+/*----- Screen Section -----*/
+
+.calc-screen{
+    padding: 1rem;
+    height: 5rem;
+    font-size: 2.5rem;
+    text-align: right;
+    background-color: var(--screen);
+    border-radius: 0.6rem;
+    color: var(--text-ligth);
+}
+/*---- Keyboard Section ----*/
+
+.calc-keyboard{
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: var(--keypad);
+    border-radius: 0.6rem;
+    button{
+        background-color: var(--main-key);
+        box-shadow: 0 5px 0 var(--main-key-shadow);
+        color: var(--text-dark);
+        height: 4rem;
+        width: 100%;
+        border-radius: 0.5rem;
+        border: none;
+        font-size: 1.7rem;
+    }
+    .DEL, .RESET{
+        font-size: 1.1rem;
+        background-color: var(--del-key);
+        color: var(--text-ligth);
+        box-shadow: 0 5px 0 var(--del-key-shadow);
+    }
+    .equal{
+        background-color: var(--key-toggle);
+        box-shadow: 0 5px 0 var(--key-toggle-shadow);
+        color: var(--text-ligth);
+    }
+}
+
+.calc-keyboard .RESET{
+    grid-column: 1 / span 2;
+    width: 100%;
+}
+.calc-keyboard .equal{
+    grid-column: 3 / span 2;
+    width: 100%;
+}
+
+@media (min-width: 700px) {
+    .calc{
+        min-width: 550px;
+    }
+}
